@@ -2,7 +2,7 @@ adaptTo() 2017 - Ease Development with Apache Sling File System Resource Provide
 =================================================================================
 
 Code samples for talk at adaptTo() 2017 in Berlin:<br/>
-[Ease Development with Apache Sling File System Resource Provider](https://adapt.to/2017/en/schedule/ease-development-with-apache-sling-file-system-resource-provider.html)
+https://adapt.to/2017/en/schedule/ease-development-with-apache-sling-file-system-resource-provider.html
 
 
 Requirements
