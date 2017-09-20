@@ -8,20 +8,11 @@
     "cq:doctype": "html_5",
     "content": {
 
-      "homeTeaser": {
-        "sling:resourceType": "wcm/foundation/components/responsivegrid",
-        "components": [
-          "adaptto-fsresource-sample/core/components/content/homeTeaser"
-        ]
-      },
-
-      "features": {
-        "sling:resourceType": "wcm/foundation/components/responsivegrid",
-        "components": [
-          "adaptto-fsresource-sample/core/components/content/contentTeaser"
-        ]
+      "content": {
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "components": "/apps/adaptto-fsresource-sample/components/content/contentTeaser"
       }
-
     }
+
   }
 }

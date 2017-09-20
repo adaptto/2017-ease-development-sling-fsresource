@@ -1,45 +1,15 @@
 {
   "jcr:primaryType": "cq:Component",
   "jcr:title": "Content Teaser",
-  "componentGroup": "pv-training-editbdlg",
+  "componentGroup": "adaptto-fsresource-sample",
   "cq:icon": "imageText",
 
   "cq:editConfig": {
-    "jcr:primaryType": "cq:EditConfig",
-    
-    "cq:inplaceEditing": {
-      "jcr:primaryType": "cq:InplaceEditingConfig",
-      "active": true,
-      "editorType": "text",
-      "config": {
-        "textPropertyName": "text",
-        "editElementQuery": "div.richtext",
-        
-        "rtePlugins": {
-          // allow only bold formatting
-          "format": {
-            "features": ["bold"]
-          },
-          // allow only link/unlink
-          "links": {
-            "features": ["modifylink","unlink"]
-          },
-          // disable some features
-          "justify": {
-            "features": "-"
-          },
-          "lists": {
-            "features": "-"
-          }
-        }
-        
-      }
-    }
-    
+    "jcr:primaryType": "cq:EditConfig"
   },
   
   "cq:htmlTag": {
-    "class": "single-features"
+    "class": "col-lg-3 col-md-6 mb-4"
   },
 
   "cq:dialog": {

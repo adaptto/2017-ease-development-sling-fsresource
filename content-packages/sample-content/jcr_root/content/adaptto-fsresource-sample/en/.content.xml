@@ -1,9 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
+        cq:cloudserviceconfigs="[[]]"
+        cq:designPath="/etc/designs/adaptto-fsresource-sample/default"
         cq:template="/apps/adaptto-fsresource-sample/templates/content"
         jcr:primaryType="cq:PageContent"
         jcr:title="Homepage"
-        sling:resourceType="adaptto-fsresource-sample/components/page/content"/>
+        sling:resourceType="adaptto-fsresource-sample/components/page/content">
+        <image jcr:primaryType="nt:unstructured"/>
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <contentteaser
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="adaptto-fsresource-sample/components/content/contentTeaser">
+                <cq:responsive jcr:primaryType="nt:unstructured"/>
+            </contentteaser>
+            <contentteaser_451182759
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="adaptto-fsresource-sample/components/content/contentTeaser">
+                <cq:responsive jcr:primaryType="nt:unstructured"/>
+            </contentteaser_451182759>
+            <contentteaser_1700280127
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="adaptto-fsresource-sample/components/content/contentTeaser">
+                <cq:responsive jcr:primaryType="nt:unstructured"/>
+            </contentteaser_1700280127>
+            <contentteaser_1515918336
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="adaptto-fsresource-sample/components/content/contentTeaser">
+                <cq:responsive jcr:primaryType="nt:unstructured"/>
+            </contentteaser_1515918336>
+        </content>
+    </jcr:content>
 </jcr:root>

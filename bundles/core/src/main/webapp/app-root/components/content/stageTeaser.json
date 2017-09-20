@@ -1,31 +1,22 @@
 {
   "jcr:primaryType": "cq:Component",
-  "jcr:title": "Home Teaser",
-  "componentGroup": "pv-training-editbdlg",
-  "cq:icon": "imageText",
+  "jcr:title": "Stage Teaser",
+  "componentGroup": "adaptto-fsresource-sample",
+  "cq:icon": "text",
 
   "cq:editConfig": {
-    "jcr:primaryType": "cq:EditConfig",
-    "cq:dropTargets": {
-      "image": {
-        "jcr:primaryType": "cq:DropTargetConfig",
-        "accept": ["image/jpeg","image/png","image/gif"],
-        "groups": ["media"],
-        "propertyName": "fileReference"
-      }
-    }
+    "jcr:primaryType": "cq:EditConfig"
   },
   
   "cq:htmlTag": {
-    "class": "col-sm-4 text-center padding wow fadeIn",
-    "data-wow-duration": "1000ms",
-    "data-wow-delay": "300ms"
+    "cq:tagName": "header",
+    "class": "jumbotron my-4"
   },
 
   "cq:dialog": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "cq/gui/components/authoring/dialog",
-    "jcr:title": "Home Teaser",
+    "jcr:title": "Stage Teaser",
     "content": {
       "sling:resourceType": "granite/ui/components/coral/foundation/fixedcolumns",
       "items": {
