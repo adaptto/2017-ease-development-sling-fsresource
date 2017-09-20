@@ -24,12 +24,12 @@ Try it out
 Enable File System Resource Provider
 ------------------------------------
 
-* Go to `bundles/core' and execute
+* Go to `bundles/core` and execute
 ```
 mvn sling:fsmount
 ```
-* Go to `content-packages/sample-content' and execute
+* Go to `content-packages/sample-content` and execute
 ```
 mvn sling:fsmount
 ```
-* Changes you are now doing on application content files in the bundle, or FileVault XML files in the sample content package are reflected immediately in the AEM instance.
+* Change application content files in the bundle, or FileVault XML files in the sample content package. The changes are reflected immediately in the AEM instance.
