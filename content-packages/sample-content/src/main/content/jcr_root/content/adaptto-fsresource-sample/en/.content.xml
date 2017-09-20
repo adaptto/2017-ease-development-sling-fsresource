@@ -2,11 +2,10 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:cloudserviceconfigs="[[]]"
         cq:designPath="/etc/designs/adaptto-fsresource-sample/default"
         cq:template="/apps/adaptto-fsresource-sample/templates/content"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Homepage"
+        jcr:title="Home"
         sling:resourceType="adaptto-fsresource-sample/components/page/content">
         <image jcr:primaryType="nt:unstructured"/>
         <content
@@ -48,4 +47,7 @@
             buttonCaption="Call to action!"
             text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat."/>
     </jcr:content>
+    <about/>
+    <services/>
+    <contact/>
 </jcr:root>
