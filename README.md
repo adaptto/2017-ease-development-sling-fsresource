@@ -33,3 +33,15 @@ mvn sling:fsmount
 mvn sling:fsmount
 ```
 * Change application content files in the bundle, or FileVault XML files in the sample content package. The changes are reflected immediately in the AEM instance.
+
+
+
+Example Variants
+----------------
+
+There are two variants of this example:
+
+* [Simple variant (no extra bundles)](https://github.com/adaptto/2017-ease-development-sling-fsresource)
+* [Variant with i18n JSON files (extra Sling bundles deployed)](https://github.com/adaptto/2017-ease-development-sling-fsresource/tree/feature/json-i18n)
+
+The variant with i18n JSON files takes a bit more time to deploy, because the Sling JCR Content Loader bundle has to be updated.
