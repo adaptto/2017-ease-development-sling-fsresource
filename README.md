@@ -16,4 +16,20 @@ Requirements
 Try it out
 ----------
 
-TBD
+* Deploy the sample application to your local AEM instance using the script `clean_install_deploy_package.sh`
+  * This does a full `mvn clean install` and then uploads the content packages from `content-packages`
+* Open the sample site at http://localhost:4502/editor.html/content/adaptto-fsresource-sample/en.html
+
+
+Enable File System Resource Provider
+------------------------------------
+
+* Go to `bundles/core' and execute
+```
+mvn sling:fsmount
+```
+* Go to `content-packages/sample-content' and execute
+```
+mvn sling:fsmount
+```
+* Changes you are now doing on application content files in the bundle, or FileVault XML files in the sample content package are reflected immediately in the AEM instance.

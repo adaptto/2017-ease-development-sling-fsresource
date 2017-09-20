@@ -74,9 +74,19 @@
           <instructions>
 
             <Sling-Initial-Content>
+            
+              <!-- Main application content -->
               SLING-INF/app-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/adaptto-fsresource-sample,
+
+              <!-- Application JSON i18n files with special XML node descriptor -->
+              SLING-INF/app-i18n;overwrite:=true;ignoreImportProviders:=json;path:=/apps/pv_base/i18n,
+
+              <!-- Application Clientlibs -->
               SLING-INF/clientlibs-root;overwrite:=true;ignoreImportProviders:=xml;path:=/etc/clientlibs/adaptto-fsresource-sample,
+
+              <!-- Application Design -->
               SLING-INF/designs-root;overwrite:=true;ignoreImportProviders:=xml;path:=/etc/designs/adaptto-fsresource-sample
+
             </Sling-Initial-Content>
 
           </instructions>
