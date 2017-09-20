@@ -18,31 +18,32 @@
     "sling:resourceType": "cq/gui/components/authoring/dialog",
     "jcr:title": "Stage Teaser",
     "content": {
-      "sling:resourceType": "granite/ui/components/coral/foundation/fixedcolumns",
+      "sling:resourceType": "granite/ui/components/foundation/container",
+      "layout": {
+        "sling:resourceType": "granite/ui/components/foundation/layouts/fixedcolumns"
+      },
       "items": {
         "column": {
-          "sling:resourceType": "granite/ui/components/coral/foundation/container",
+          "sling:resourceType": "granite/ui/components/foundation/container",
           "items": {
-            
+
             "title": {
-              "sling:resourceType": "granite/ui/components/coral/foundation/form/textfield",
-              "name": "./title",
+              "sling:resourceType": "granite/ui/components/foundation/form/textfield",
+              "name": "./jcr:title",
               "fieldLabel": "Title"
             },
-            
             "text": {
-              "sling:resourceType": "granite/ui/components/coral/foundation/form/textarea",
+              "sling:resourceType": "granite/ui/components/foundation/form/textarea",
               "name": "./text",
-              "fieldLabel": "Text"
+              "fieldLabel": "Text",
+              "rows": 5
             },
-            
-            "pathfield": {
-              "sling:resourceType": "granite/ui/components/coral/foundation/form/pathfield",
-              "name": "./fileReference",
-              "fieldLabel": "Icon Asset",
-              "rootPath": "/content/dam/pv-training-editbdlg"
+            "buttonCaption": {
+              "sling:resourceType": "granite/ui/components/foundation/form/textfield",
+              "name": "./buttonCaption",
+              "fieldLabel": "Button Caption"
             }
-            
+
           }
         }
       }

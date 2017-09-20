@@ -14,24 +14,38 @@
             sling:resourceType="wcm/foundation/components/responsivegrid">
             <contentteaser
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="adaptto-fsresource-sample/components/content/contentTeaser">
-                <cq:responsive jcr:primaryType="nt:unstructured"/>
-            </contentteaser>
+                jcr:title="The Location"
+                sling:resourceType="adaptto-fsresource-sample/components/content/contentTeaser"
+                buttonCaption="Find It!"
+                fileReference="/content/dam/adaptto-fsresource-sample/image1.jpg"
+                text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque."/>
             <contentteaser_451182759
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="adaptto-fsresource-sample/components/content/contentTeaser">
-                <cq:responsive jcr:primaryType="nt:unstructured"/>
-            </contentteaser_451182759>
+                jcr:title="The Sessions"
+                sling:resourceType="adaptto-fsresource-sample/components/content/contentTeaser"
+                buttonCaption="See It!"
+                fileReference="/content/dam/adaptto-fsresource-sample/image2.jpg"
+                text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque."/>
+            <contentteaser_151591
+                jcr:primaryType="nt:unstructured"
+                jcr:title="The Food"
+                sling:resourceType="adaptto-fsresource-sample/components/content/contentTeaser"
+                buttonCaption="Eat It!"
+                fileReference="/content/dam/adaptto-fsresource-sample/image3.jpg"
+                text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque."/>
             <contentteaser_1700280127
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="adaptto-fsresource-sample/components/content/contentTeaser">
-                <cq:responsive jcr:primaryType="nt:unstructured"/>
-            </contentteaser_1700280127>
-            <contentteaser_1515918336
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="adaptto-fsresource-sample/components/content/contentTeaser">
-                <cq:responsive jcr:primaryType="nt:unstructured"/>
-            </contentteaser_1515918336>
+                jcr:title="The Community"
+                sling:resourceType="adaptto-fsresource-sample/components/content/contentTeaser"
+                buttonCaption="Feel It!"
+                fileReference="/content/dam/adaptto-fsresource-sample/image4.jpg"
+                text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque."/>
         </content>
+        <stageTeaser
+            jcr:primaryType="nt:unstructured"
+            jcr:title="A Warm Welcome!"
+            sling:resourceType="adaptto-fsresource-sample/components/content/stageTeaser"
+            buttonCaption="Call to action!"
+            text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat."/>
     </jcr:content>
 </jcr:root>
