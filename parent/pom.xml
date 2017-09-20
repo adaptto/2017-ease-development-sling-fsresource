@@ -22,21 +22,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>io.wcm.maven</groupId>
-    <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.2.6</version>
-    <relativePath/>
-  </parent>
-
   <groupId>org.adaptto.fsresource</groupId>
   <artifactId>org.adaptto.fsresource.parent</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <properties>
-    <build.compiler.source>1.8</build.compiler.source>
-    <build.compiler.target>1.8</build.compiler.target>
+
+    <!-- Sling instance parameters -->
+    <sling.url>http://localhost:4502</sling.url>
+    <sling.user>admin</sling.user>
+    <sling.password>admin</sling.password>
+
   </properties>
 
   <dependencyManagement>
@@ -44,11 +41,9 @@
 
       <!-- Import AEM dependencies -->
       <dependency>
-        <groupId>io.wcm.maven</groupId>
-        <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>6.0.0.0001</version>
-        <type>pom</type>
-        <scope>import</scope>
+        <groupId>com.adobe.aem</groupId>
+        <artifactId>aem-api</artifactId>
+        <version>6.0.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.osgi</groupId>
@@ -63,17 +58,89 @@
 
     </dependencies>
   </dependencyManagement>
-
+  
   <build>
-    <extensions>
+    <pluginManagement>
+      <plugins>
+      
+        <plugin>
+          <groupId>org.apache.felix</groupId>
+          <artifactId>maven-bundle-plugin</artifactId>
+          <version>3.3.0</version>
+          <extensions>true</extensions>
+        </plugin>
 
-      <extension>
-        <groupId>de.pro-vision.maven</groupId>
-        <artifactId>de.pro-vision.maven.build-tools.global-build-tools-mixin</artifactId>
-        <version>1</version>
-      </extension>
+        <plugin>
+          <groupId>org.apache.sling</groupId>
+          <artifactId>maven-sling-plugin</artifactId>
+          <version>2.3.1-SNAPSHOT</version>
+        </plugin>
 
-    </extensions>
+        <plugin>
+          <groupId>org.apache.sling</groupId>
+          <artifactId>htl-maven-plugin</artifactId>
+          <version>1.0.8</version>
+        </plugin>
+
+        <plugin>
+          <groupId>com.day.jcr.vault</groupId>
+          <artifactId>content-package-maven-plugin</artifactId>
+          <version>0.5.24</version>
+          <configuration>
+            <failOnError>true</failOnError>
+            <failOnMissingEmbed>true</failOnMissingEmbed>
+            <targetURL>${sling.url}/crx/packmgr/service.jsp</targetURL>
+            <serviceURL>${sling.url}/crx/packmgr/service/.json</serviceURL>
+            <userId>${sling.user}</userId>
+            <password>${sling.password}</password>
+            <verbose>true</verbose>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>io.wcm.maven.plugins</groupId>
+          <artifactId>wcmio-content-package-maven-plugin</artifactId>
+          <version>1.6.0</version>
+          <configuration>
+            <serviceURL>${sling.url}/crx/packmgr/service</serviceURL>
+            <userId>${sling.user}</userId>
+            <password>${sling.password}</password>
+            <excludeFiles>
+              <exclude>^META-INF/.*</exclude>
+              <!-- exclude renditions that are automatically generated -->
+              <exclude>.*/cq5dam\.thumbnail\..*</exclude>
+            </excludeFiles>
+            <excludeProperties>
+              <exclude>jcr\:created</exclude>
+              <exclude>jcr\:createdBy</exclude>
+              <exclude>jcr\:lastModified</exclude>
+              <exclude>jcr\:lastModifiedBy</exclude>
+              <exclude>jcr\:uuid</exclude>
+              <exclude>jcr\:isCheckedOut</exclude>
+              <exclude>cq\:lastModified</exclude>
+              <exclude>cq\:lastModifiedBy</exclude>
+              <exclude>cq\:lastReplicated</exclude>
+              <exclude>cq\:lastReplicatedBy</exclude>
+              <exclude>cq\:lastReplicationAction</exclude>
+              <exclude>dam\:extracted</exclude>
+              <exclude>dam\:sha1</exclude>
+              <exclude>dam\:Comments</exclude>
+              <exclude>dam\:assetState</exclude>
+              <exclude>dam\:relativePath</exclude>
+              <exclude>dc\:modified</exclude>
+            </excludeProperties>
+            <excludeMixins>
+              <exclude>mix\:versionable</exclude>
+              <exclude>mix\:referenceable</exclude>
+              <exclude>cq\:Taggable</exclude>
+              <exclude>cq\:ReplicationStatus</exclude>
+            </excludeMixins>
+            <failOnMissingEmbed>true</failOnMissingEmbed>
+          </configuration>
+        </plugin>
+
+      </plugins>
+    </pluginManagement>
   </build>
 
 </project>

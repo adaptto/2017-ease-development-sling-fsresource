@@ -57,15 +57,15 @@
   </dependencies>
 
   <build>
+    <resources>
+      <!-- copy webapp resources to SLING-INF/app-root -->
+      <resource>
+        <directory>src/main/webapp</directory>
+        <targetPath>SLING-INF</targetPath>
+        <filtering>false</filtering>
+      </resource>
+    </resources>
     <plugins>
-
-      <plugin>
-        <groupId>io.wcm.devops.maven.plugins</groupId>
-        <artifactId>eclipse-maven-plugin</artifactId>
-        <configuration>
-          <addVersionToProjectName>false</addVersionToProjectName>
-        </configuration>
-      </plugin>
 
       <plugin>
         <groupId>org.apache.felix</groupId>
@@ -80,6 +80,37 @@
             </Sling-Initial-Content>
 
           </instructions>
+        </configuration>
+      </plugin>
+      
+      <!-- Validate JSON files -->
+      <plugin>
+        <groupId>org.apache.sling</groupId>
+        <artifactId>maven-sling-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>validate-json</id>
+            <goals>
+              <goal>validate</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Validate Slightly HTML scripts -->
+      <plugin>
+        <groupId>org.apache.sling</groupId>
+        <artifactId>htl-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>validate-scripts</id>
+            <goals>
+              <goal>validate</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <sourceDirectory>src/main/webapp</sourceDirectory>
         </configuration>
       </plugin>
       
