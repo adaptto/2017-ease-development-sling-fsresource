@@ -10,6 +10,7 @@ Requirements
 
 * Java 8
 * Maven 3.3.9
+* AEM 6.1, 6.2 or 6.3 running on port 4502
 
 
 Try it out

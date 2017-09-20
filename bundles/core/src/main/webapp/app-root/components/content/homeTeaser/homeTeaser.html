@@ -1,0 +1,15 @@
+<div class="single-service cq-dd-image" data-sly-test.hasContent="${properties.title || properties.fileReference}">
+
+  <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms" data-sly-test="${properties.fileReference}">
+    <!--/* Inserting a DAM asset like this is generally too simplified.
+           It always injects the original rendition, whether this is the best match or not.
+           Use Core WCM Image component or wcm.io Media Handling instead. */-->
+    <img src="${properties.fileReference}" alt="">
+  </div>
+
+  <h2>${properties.title}</h2>
+  <p>${properties.text}</p>
+
+</div>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !hasContent, classAppend='cq-dd-image'}"></sly>

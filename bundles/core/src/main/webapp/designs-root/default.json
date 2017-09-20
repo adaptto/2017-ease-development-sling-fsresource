@@ -1,0 +1,27 @@
+{
+  "jcr:primaryType": "cq:Page",
+  "jcr:content": {
+    "jcr:primaryType": "cq:PageContent",
+    "sling:resourceType": "wcm/core/components/designer",
+    "jcr:title": "adaptTo() FSResource Sample Design",
+    "cq:template": "/libs/wcm/core/templates/designpage",
+    "cq:doctype": "html_5",
+    "content": {
+
+      "homeTeaser": {
+        "sling:resourceType": "wcm/foundation/components/responsivegrid",
+        "components": [
+          "adaptto-fsresource-sample/core/components/content/homeTeaser"
+        ]
+      },
+
+      "features": {
+        "sling:resourceType": "wcm/foundation/components/responsivegrid",
+        "components": [
+          "adaptto-fsresource-sample/core/components/content/contentTeaser"
+        ]
+      }
+
+    }
+  }
+}

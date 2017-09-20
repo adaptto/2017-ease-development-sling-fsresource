@@ -1,0 +1,24 @@
+<sly data-sly-test.hasContent="${properties.title}">
+
+  <div class="${properties.imagePos=='right' ? 'col-sm-6 col-sm-offset-1 align-right wow fadeInLeft' : 'col-sm-5 wow fadeInLeft'}"
+      data-wow-duration="500ms" data-wow-delay="300ms">
+    <!-- Embed Core WCM component for image -->
+    <sly data-sly-resource="${'image' @ resourceType='pv-training-editbdlg/core/components/content/image'}"></sly>
+  </div>
+
+  <div class="${properties.imagePos=='right' ? 'col-sm-5 wow fadeInRight' : 'col-sm-6 wow fadeInRight'}" data-wow-duration="500ms" data-wow-delay="300ms">
+    <h2>${properties.title}</h2>
+    <div class="richtext">
+      ${properties.text @ context='html'}
+    </div>
+    <p data-sly-test="${properties.contactName}">
+      Contact: ${properties.contactName}<sly data-sly-test="${properties.contactEMail}">,
+      <a href="mailto:${properties.contactEMail}">${properties.contactEMail}</a></sly><sly data-sly-test="${properties.contactPhone}">,
+      Phone ${properties.contactPhone}</sly>
+    </p>
+  </div>
+
+</sly>
+
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !hasContent}"></sly>
