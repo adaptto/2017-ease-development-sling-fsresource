@@ -9,7 +9,7 @@
     "content": {
 
       "content": {
-        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sling:resourceType": "foundation/components/parsys",
         "components": "/apps/adaptto-fsresource-sample/components/content/contentTeaser"
       }
     }
