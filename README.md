@@ -21,8 +21,21 @@ Try it out
 * Open the sample site at http://localhost:4502/editor.html/content/adaptto-fsresource-sample/en.html
 
 
+Deploy Bundle
+-------------
+
+To deploy the OSGi bundle including the Sling Initial Content to the local AEM instance:
+
+* Go to `bundles/core` and execute
+```
+mvn install sling:install
+```
+
+
 Enable File System Resource Provider
 ------------------------------------
+
+To enable the File System Resource provider for the OSGi bundle and sample content FileVault project:
 
 * Go to `bundles/core` and execute
 ```
