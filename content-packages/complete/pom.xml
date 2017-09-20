@@ -58,8 +58,8 @@
     <plugins>
 
       <plugin>
-        <groupId>io.wcm.maven.plugins</groupId>
-        <artifactId>wcmio-content-package-maven-plugin</artifactId>
+        <groupId>com.day.jcr.vault</groupId>
+        <artifactId>content-package-maven-plugin</artifactId>
         <extensions>true</extensions>
         <configuration>
           <name>${content-package-name}</name>

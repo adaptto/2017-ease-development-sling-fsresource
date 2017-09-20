@@ -41,30 +41,21 @@
 
   <build>
     <finalName>${content-package-name}-${project.version}</finalName>
-
     <resources>
-      <!-- Include all files from jcr_root in content package -->
       <resource>
-        <directory>jcr_root</directory>
+        <directory>src/main/content/jcr_root</directory>
       </resource>
     </resources>
-
     <plugins>
+
       <plugin>
-        <groupId>io.wcm.maven.plugins</groupId>
-        <artifactId>wcmio-content-package-maven-plugin</artifactId>
+        <groupId>com.day.jcr.vault</groupId>
+        <artifactId>content-package-maven-plugin</artifactId>
         <extensions>true</extensions>
         <configuration>
           <name>${content-package-name}</name>
           <group>${content-package-group}</group>
-          <filters>
-            <filter>
-              <root>/content/adaptto-fsresource-sample</root>
-            </filter>
-            <filter>
-              <root>/content/dam/adaptto-fsresource-sample</root>
-            </filter>
-          </filters>
+          <filterSource>src/main/content/META-INF/vault/filter.xml</filterSource>
         </configuration>
       </plugin>
 

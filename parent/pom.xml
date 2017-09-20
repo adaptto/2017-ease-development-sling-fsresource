@@ -74,6 +74,11 @@
           <groupId>org.apache.sling</groupId>
           <artifactId>maven-sling-plugin</artifactId>
           <version>2.3.1-SNAPSHOT</version>
+          <configuration>
+            <slingUrl>${sling.url}/system/console</slingUrl>
+            <user>${sling.user}</user>
+            <password>${sling.password}</password>
+          </configuration>
         </plugin>
 
         <plugin>
@@ -85,7 +90,7 @@
         <plugin>
           <groupId>com.day.jcr.vault</groupId>
           <artifactId>content-package-maven-plugin</artifactId>
-          <version>0.5.24</version>
+          <version>0.5.1</version>
           <configuration>
             <failOnError>true</failOnError>
             <failOnMissingEmbed>true</failOnMissingEmbed>
@@ -136,6 +141,10 @@
               <exclude>cq\:ReplicationStatus</exclude>
             </excludeMixins>
             <failOnMissingEmbed>true</failOnMissingEmbed>
+            <unpackDirectory>src/main/content</unpackDirectory>
+            <unpackDeleteDirectories>
+              <directory>jcr_root</directory>
+            </unpackDeleteDirectories>
           </configuration>
         </plugin>
 
