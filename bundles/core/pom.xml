@@ -53,6 +53,16 @@
       <artifactId>aem-api</artifactId>
       <scope>compile</scope>
     </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <scope>provided</scope>
+    </dependency>
 
   </dependencies>
 
@@ -85,6 +95,16 @@
               SLING-INF/designs-root;overwrite:=true;ignoreImportProviders:=xml;path:=/etc/designs/adaptto-fsresource-sample
 
             </Sling-Initial-Content>
+
+            <!-- Exported package versions differ in major version between AEM60, AEM61 and AEM62 -->
+            <Import-Package>
+              com.day.cq.commons;version="[5,7)",
+              *
+            </Import-Package>
+
+            <Sling-Model-Packages>
+              org.adaptto.fsresource.core.model
+            </Sling-Model-Packages>
 
           </instructions>
         </configuration>
